@@ -1,0 +1,28 @@
+body {
+background-color: #f8f9fa;
+}
+
+.custom-navbar {
+margin-bottom: 20px;
+}
+
+.custom-card {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border: none;
+}
+
+.card-title {
+font-size: 1.25rem;
+font-weight: bold;
+}
+
+.table {
+background-color: #ffffff;
+}
+
+.list-group-item {
+background-color: #ffffff;
+border: 1px solid #ddd;
+}
+  
+.container{display: block;}
