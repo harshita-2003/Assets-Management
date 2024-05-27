@@ -32,7 +32,7 @@ const Sidebar = ({children}) => {
 
   return (
       <div className="container">
-        <div className={`sidebar ${collapsed ? 'collapsed' : ''}`} >
+        <div className={`sidebar ${collapsed ? 'collapsed' : ''}`} style={{width:collapsed?'80px':'350px'}}>
           <div className="top_section">
             <h1 className="logo" style={{display:collapsed?'none':'block'}}>Logo</h1>
             <button className="btn text-white" onClick={handleToggleSidebar}><div className="bars">

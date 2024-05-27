@@ -9,6 +9,7 @@ margin-bottom: 20px;
 .custom-card {
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 border: none;
+height: 7rem;
 }
 
 .card-title {

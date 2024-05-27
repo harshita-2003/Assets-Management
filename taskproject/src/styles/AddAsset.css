@@ -1,0 +1,56 @@
+/* MotorAssetForm.css */
+form {
+max-width: 600px;
+margin: 0 auto;
+padding: 2rem;
+background: #f9f9f9;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+margin-bottom: 1rem;
+}
+
+label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: bold;
+color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+width: 100%;
+padding: 0.75rem;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 1rem;
+}
+
+textarea {
+resize: vertical;
+}
+
+button {
+display: inline-block;
+padding: 0.75rem 1.5rem;
+background: #007bff;
+color: #fff;
+border: none;
+border-radius: 4px;
+font-size: 1rem;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+button:hover {
+background: #0056b3;
+}
+
+.error {
+color: red;
+font-size: 0.875rem;
+margin-top: 0.5rem;
+}
