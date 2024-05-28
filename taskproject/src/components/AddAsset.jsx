@@ -58,6 +58,26 @@ export default function AddAssetModal() {
 
       // Close the modal after submission (optional)
       document.querySelector('#exampleModalCenter .close').click();
+
+      setFormData({
+        id: "",
+        name: "",
+        description: "",
+        location: "",
+        manufacturer: "",
+        modelNumber: "",
+        serialNumber: "",
+        installationDate: "",
+        lastMaintenanceDate: "",
+        status: "",
+        specifications: {
+          power: "",
+          voltage: "",
+          current: "",
+          speed: "",
+        },
+      })
+
     } else {
       setErrors(validationErrors);
     }

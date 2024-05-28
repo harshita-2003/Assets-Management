@@ -71,10 +71,10 @@ export default function Assets(props) {
                   <td>{asset.installationDate}</td>
                   <td>{asset.status}</td>
                   <td>
-                  <div className='d-flex'>
-                      <button className='btn btn-danger mx-1' onClick={handledelete} value={asset._id}>Delete</button>
-                      <button className='btn btn-primary mx-1' onClick={() => handleUpdate(asset)}>Update</button>
-                      <button className='btn btn-success mx-1' onClick={() => handleView(asset)} value={asset._id}>View</button>
+                    <div className='d-flex'>
+                        <button className='btn btn-danger mx-1' onClick={handledelete} value={asset._id}>Delete</button>
+                        <button className='btn btn-primary mx-1' onClick={() => handleUpdate(asset)}>Update</button>
+                        <button className='btn btn-success mx-1' onClick={() => handleView(asset)} value={asset._id}>View</button>
                     </div>
                   </td>
                 </tr>

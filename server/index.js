@@ -33,6 +33,12 @@ const addassetschema = mongoose.Schema({
         voltage: Number,
         current: Number,
         speed: Number
+    },
+    M_tickets:{
+        ticketId : {
+            type : mongoose.Schema.Types.ObjectId,
+            refs : "tickets"
+        }
     }
 });
 
@@ -103,6 +109,77 @@ app.put('/updateasset/:id', async (req, res) => {
         res.status(500).send(error);
     }
 });
+
+
+
+//ticketmaintenance work
+const ticketschema = mongoose.Schema({
+    ticketId : String,
+    assetId : String ,
+    description : String,
+    raiseddate : String,
+    status : String
+})
+
+const ticketModel = mongoose.model('Tickets' , ticketschema)
+
+app.post('/addticket',(req,res) => {
+    try {
+        const newticket = new ticketModel(req.body)
+        newticket.save()
+        res.status(200);
+    } catch (error) {
+        console.log(error);
+    }
+    
+})
+
+app.get('/getticket' ,async (req,res) => {
+    try {
+        const data = await ticketModel.find();
+        if(data) {
+            res.json(data);
+        }else{
+            res.json("data not found!")
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
+
+app.delete('/deleteticket/:id',async (req,res) => {
+    try {
+        const id = req.params.id
+        const deleteticket = await ticketModel.findByIdAndDelete(id);
+
+        if(!deleteticket){
+            return res.status(404).send({error:"Ticket Id not found"})
+        }
+        res.status(200).json("ticket delete successfull")
+        
+    } catch (error) {
+        res.status(404).json("cannot delete")
+    }
+})
+
+
+app.put('/updateticket/:id' ,async (req,res) => {
+    try {
+        const id = req.params.id;
+        const updata = req.body;
+        const result = await ticketModel.findByIdAndUpdate(id,updata ,{ new: true })
+
+        if(!result) {
+            res.status(404).json("result cannot be updated")
+        }
+        res.status(200).json("data updated successfully");
+    } catch (error) {
+        res.status(500)
+        console.log(error)
+    }
+    
+})
+
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
