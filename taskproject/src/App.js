@@ -31,15 +31,29 @@ function App() {
   }
   useEffect(() => {
     getData();
-  })
+  },[])
+
+  //gettickets
+  const [tickets, setTickets] = useState([]);
+
+  async function getticket(){
+    const url = await fetch(`${Env.URL}/getticket`)
+    const result = await url.json()
+
+    setTickets(result);
+  }
+
+  useEffect(() => {
+    getticket()
+  }, []);
 
   return (
     <Router>
         <Sidebar collapsed={collapsed} toggleSidebar={handleToggleSidebar} >
           <Routes>
-            <Route path="/" element={<Dashboard assets={assets}/>} />
+            <Route path="/" element={<Dashboard assets={assets} tickets={tickets} />} />
             <Route path="/assets" element={<Assets assets={assets}  getData={getData}/> } />
-            <Route path="/ticket-maintenance" element={<TicketMaintenance />} />
+            <Route path="/ticket-maintenance" element={<TicketMaintenance tickets={tickets} getticket={getticket} />} />
             <Route path='/addasset' element={<AddAsset />}/>
           </Routes>
         </Sidebar>

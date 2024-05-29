@@ -4,18 +4,21 @@ import '../styles/Dashboard.css'
 
 export default function Dashboard(props) {
 
-  const keyMetrics = {
-    totalAssets: 50,
-    operational: 45,
-    underMaintenance: 5,
-  };
-
   const recentActivities = [
     { id: 1, description: 'Motor A underwent routine maintenance', date: '2024-05-10' },
     { id: 2, description: 'Motor B reported an issue', date: '2024-04-22' },
     { id: 3, description: 'Motor C underwent routine maintenance', date: '2024-05-15' },
   ];
 
+  const assetsLength = props.assets ? props.assets.length : 0;
+
+  const assetundermaintenance= props.assets ?  props.assets.filter(asset => asset.status ==='Under Maintenance').length : 0 
+
+  const assetoperational = props.assets? props.assets.filter(asset => asset.status === 'Operational').length : 0
+
+  const issueLength = props.tickets ? props.tickets.length : 0;
+
+  const maintenancedone= props.tickets ? props.tickets.filter(ticket => ticket.status==='Closed').length : 0
 
   return (
     <>
@@ -34,7 +37,7 @@ export default function Dashboard(props) {
               <div className="card-body">
                 <h5 className="card-title">Total Motor Assets</h5>
                 <p className="card-text">
-                  {keyMetrics.totalAssets}
+                  {assetsLength}
                 </p>
               </div>
             </div>
@@ -44,7 +47,7 @@ export default function Dashboard(props) {
               <div className="card-body">
                 <h5 className="card-title">Operational Motors</h5>
                 <p className="card-text">
-                  {keyMetrics.operational}
+                  {assetoperational}
                 </p>
               </div>
             </div>
@@ -54,7 +57,7 @@ export default function Dashboard(props) {
               <div className="card-body">
                 <h5 className="card-title">Motors Under Maintenance</h5>
                 <p className="card-text">
-                  {keyMetrics.underMaintenance}
+                  {assetundermaintenance}
                 </p>
               </div>
             </div>
@@ -69,7 +72,7 @@ export default function Dashboard(props) {
               <div className="card-body">
                 <h5 className="card-title">Issues reported</h5>
                 <p className="card-text">
-                  0
+                  {issueLength}
                 </p>
               </div>
             </div>
@@ -79,7 +82,7 @@ export default function Dashboard(props) {
               <div className="card-body">
                 <h5 className="card-title">Maintenance Done</h5>
                 <p className="card-text">
-                  45
+                  {maintenancedone}
                 </p>
               </div>
             </div>
