@@ -3,6 +3,7 @@ import AddAssetModal from './AddAsset';
 import Env from '../Env';
 import ViewAsset from './ViewAsset';
 import UpdateAsset from './UpdateAsset';
+import '../styles/Assets.css'
 
 export default function Assets(props) {
 

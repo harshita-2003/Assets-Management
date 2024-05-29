@@ -5,7 +5,7 @@ export default function ViewAsset({ asset, onClose }) {
   if (!asset) return null;
 
   return (
-    <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-labelledby="viewAssetModalTitle" aria-hidden="true">
+    <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-labelledby="viewAssetModalTitle" aria-hidden="true" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }} >
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content">
           <div className="modal-header">

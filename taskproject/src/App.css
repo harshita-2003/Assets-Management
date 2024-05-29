@@ -11,3 +11,49 @@ main{
   padding:20px;
   overflow-y: auto;
 }
+
+input{
+  box-shadow: 0 1px 3px -2px #9098A9;
+  color: #5A667F;
+}
+
+/* ViewAsset.css */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+
+.modal-content {
+  overflow: hidden;
+}
+
+.modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@media screen and (max-width:380px) {
+  h2{
+    font-size: 1.5em;
+  }
+  
+  h1{
+    font-size: 2em;
+  }
+  main{
+    padding-left: 10px;
+
+  }
+}
+
+@media screen and (max-width:860px) {
+  .col-md-4{
+    width:100%;
+  }
+}
+

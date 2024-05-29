@@ -54,3 +54,24 @@ color: red;
 font-size: 0.875rem;
 margin-top: 0.5rem;
 }
+
+
+select {
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 150ms ease;
+    border: 1px solid #E8EAED;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px -2px #9098A9;
+    color: #5A667F;
+}
+
+select:focus{
+    outline: none;
+    border-color: #0077FF;
+    box-shadow: 0 0 0 2px rgba(#0077FF,.2);
+}
+
+select:hover{
+    stroke: #0077FF;
+}

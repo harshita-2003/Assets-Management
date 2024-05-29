@@ -33,7 +33,7 @@ export default function UpdateAsset({ asset, onClose, onUpdate }) {
     };
 
     return (
-        <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-labelledby="updateAssetModalTitle" aria-hidden="true">
+        <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-labelledby="updateAssetModalTitle" aria-hidden="true" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }} >
             <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                     <div className="modal-header">

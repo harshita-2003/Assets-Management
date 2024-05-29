@@ -68,3 +68,14 @@ color: #000;
     background-color: #a4fcdfe8;
     color: black;
 }
+
+
+@media screen and (max-width:500px) {
+    .top_section{
+        justify-content: center;
+    }
+    .sidebar.collapsed{
+        
+    }
+}
+

@@ -123,13 +123,26 @@ const ticketschema = mongoose.Schema({
 
 const ticketModel = mongoose.model('Tickets' , ticketschema)
 
-app.post('/addticket',(req,res) => {
+app.post('/addticket',async (req,res) => {
     try {
-        const newticket = new ticketModel(req.body)
-        newticket.save()
-        res.status(200);
+        const { assetId, description, raiseddate, status } = req.body;
+
+        const assetExists = await assetModel.findOne({ id: assetId });
+        if (!assetExists) {
+            return res.status(400).json({ error: 'AssetId not found' });
+        }
+
+        // Generate ticket ID
+        const ticketCount = await ticketModel.countDocuments();
+        const ticketId = `TCK-${ticketCount + 101}`;
+
+        const newTicket = new ticketModel({ ticketId, assetId, description, raiseddate, status });
+        await newTicket.save();
+        res.status(200).json({ message: 'Ticket added successfully', ticketId });
+
     } catch (error) {
         console.log(error);
+        res.status(500).json({ error: 'Internal server error' });
     }
     
 })

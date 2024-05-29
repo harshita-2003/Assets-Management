@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Env from '../Env'
+import '../styles/AddAsset.css'
 
-export default function AddTicket(props) {
+export default function AddTicket({getticket}) {
 
     const [formData, setFormData] = useState({
-        ticketId: "",
         assetId: "",
         description: "",
         raiseddate: "",
@@ -25,7 +25,7 @@ export default function AddTicket(props) {
     
             if (!result.ok) {
                 const errorText = await result.text();
-                throw new Error(`Network response was not ok: ${errorText}`);
+                throw new Error(`Network response was not ok : ${errorText}`);
             }
     
             let finalresult = await result.json();
@@ -33,6 +33,8 @@ export default function AddTicket(props) {
     
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
+            setErrors({ submit: error.message });
+
         }
       }
     
@@ -46,16 +48,18 @@ export default function AddTicket(props) {
     
           document.querySelector('#exampleModalCenter .close').click();
 
+          getticket();
+
           
           setFormData({
-            ticketId: "",
+            // ticketId: "",
             assetId: "",
             description: "",
             raiseddate: "",
             status: ""
           })
 
-          props.getticket();
+          getticket();
 
         } else {
           setErrors(validationErrors);
@@ -70,7 +74,6 @@ export default function AddTicket(props) {
     
       const validateFormData = (data) => {
         let errors = {};
-        if (!data.ticketId) errors.ticketId = "Ticket ID is required";
         if (!data.assetId) errors.assetId = "Asset ID is required";
         if (!data.description) errors.description = "Description is required";
         if (!data.raiseddate) errors.raiseddate = "Raised Date is required";
@@ -98,11 +101,6 @@ export default function AddTicket(props) {
               <form onSubmit={handleSubmit} method='post' action='/addticket'>
                 <h2 className='text-center'>Add Ticket Form</h2>
                 <div>
-                  <label>Ticket ID:</label>
-                  <input type="text" name="ticketId" value={formData.ticketId} onChange={handleChange} />
-                  {errors.ticketId && <span className="error">{errors.ticketId}</span>}
-                </div>
-                <div>
                   <label>Asset ID:</label>
                   <input type="text" name="assetId" value={formData.assetId} onChange={handleChange} />
                   {errors.assetId && <span className="error">{errors.assetId}</span>}
@@ -120,11 +118,18 @@ export default function AddTicket(props) {
                 </div>
                 <div>
                   <label>Status:</label>
-                  <input type="text" name="status" value={formData.status} onChange={handleChange} />
+                  {/* <input type="text" name="status" value={formData.status} onChange={handleChange} /> */}
+                  <select name="status" value={formData.status} onChange={handleChange}>
+                    <option value="">Select Status</option>
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Closed">Closed</option>
+                  </select>
                   {errors.status && <span className="error">{errors.status}</span>}
                 </div>
 
-                <button className='btn btn-success' type="submit">Submit</button>
+                <button className='btn btn-success d-block' type="submit">Submit</button>
+                {errors.submit && <span className="error">{errors.submit}</span>}
               </form>
 
             </div>

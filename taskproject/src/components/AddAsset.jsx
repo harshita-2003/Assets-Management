@@ -183,7 +183,13 @@ export default function AddAssetModal() {
                 </div>
                 <div>
                   <label>Status:</label>
-                  <input type="text" name="status" value={formData.status} onChange={handleChange} />
+                  {/* <input type="text" name="status" value={formData.status} onChange={handleChange} /> */}
+                  <select name="status" value={formData.status} onChange={handleChange}>
+                    <option value="">Select Status</option>
+                    <option value="Operational">Operational</option>
+                    <option value="Under Maintenance">Under Maintenance</option>
+                    <option value="Cleared">Cleared</option>
+                  </select>
                   {errors.status && <span className="error">{errors.status}</span>}
                 </div>
                 <div>
