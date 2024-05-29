@@ -17,11 +17,10 @@
 
     .btn {
         padding: 0.25rem 0.5rem;
-        font-size: 12px;
     }
 
     .modal-content {
-        width: 90%;
+        width: 100%;
     }
 
     .modal-body {

@@ -118,7 +118,6 @@ export default function AddTicket({getticket}) {
                 </div>
                 <div>
                   <label>Status:</label>
-                  {/* <input type="text" name="status" value={formData.status} onChange={handleChange} /> */}
                   <select name="status" value={formData.status} onChange={handleChange}>
                     <option value="">Select Status</option>
                     <option value="Open">Open</option>
