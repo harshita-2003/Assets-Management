@@ -84,8 +84,8 @@ export default function AddTicket({getticket}) {
 
   return (
     <div>
-      <button type="button" className="btn btn-primary btn-lg mb-4" data-toggle="modal" data-target="#exampleModalCenter">
-        Generate Ticket
+      <button type="button" className="btn btn-dark btn-lg mb-4" data-toggle="modal" data-target="#exampleModalCenter">
+        Generate Ticket 🎟️
       </button>
 
       <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

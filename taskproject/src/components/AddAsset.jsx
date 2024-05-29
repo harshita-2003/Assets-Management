@@ -119,9 +119,9 @@ export default function AddAssetModal() {
   };
 
   return (
-    <div>
-      <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Add an Asset
+    <div className='text-center'>
+      <button type="button" className="btn btn-lg btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+        + Add an Asset
       </button>
 
       <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

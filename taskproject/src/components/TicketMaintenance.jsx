@@ -59,7 +59,7 @@ export default function TicketMaintenance(props) {
               </div>
               <div className='d-flex'>
                 <button className='btn btn-danger mx-1' onClick={handledelete} value={ticket._id}>Delete</button>
-                <button className='btn btn-primary mx-1' onClick={() => handleupdate(ticket)} value={ticket._id}>Update</button>
+                <button className='btn btn-info mx-1' onClick={() => handleupdate(ticket)} value={ticket._id}>Update</button>
               </div>
             </div>
           ))}
