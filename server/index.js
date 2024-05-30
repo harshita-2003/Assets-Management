@@ -2,17 +2,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const port = 8080;
+require('dotenv').config()
+const port = process.env.PORT;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // Add this line to parse JSON bodies
 app.use(cors()); // Add this line to enable CORS
 
-mongoose.connect("mongodb://127.0.0.1:27017/assets", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGO_URL);
 
 const addassetschema = mongoose.Schema({
   id: {
@@ -33,13 +31,7 @@ const addassetschema = mongoose.Schema({
     voltage: Number,
     current: Number,
     speed: Number,
-  },
-  M_tickets: {
-    ticketId: {
-      type: mongoose.Schema.Types.ObjectId,
-      refs: "tickets",
-    },
-  },
+  }
 });
 
 const assetModel = mongoose.model("asset", addassetschema);
@@ -202,3 +194,8 @@ app.put("/updateticket/:id", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+
+//AssetManagement
+//VLqxYlboRIMrtd8K
+//harshitagupta2022
