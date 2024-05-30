@@ -1,7 +1,3 @@
-Sure, here is a concise README for your GitHub repository:
-
----
-
 # Asset Management System
 
 This project is an Asset Management System that provides a dynamic dashboard, asset management functionalities, and ticket management capabilities. The application is built using modern web technologies and offers a seamless user experience for managing and tracking assets.
