@@ -96,7 +96,7 @@ export default function Dashboard(props) {
             <ul className="list-group">
               {recentActivities.map(activity => (
                 <li key={activity.id} className="list-group-item">
-                  {activity.description} <span className="text-muted">({activity.date})</span>
+                  {activity.description} <span className="text-muted float-right">({activity.date})</span>
                 </li>
               ))}
             </ul>
@@ -110,9 +110,9 @@ export default function Dashboard(props) {
         <div className="row mb-4 d-flex">
             
           {props.assets.map(element => (
-            <div className="col-md-4 mb-2">
+            <div className="col-md-4 mb-2" key={element.id}>
               <div className="card custom-card">
-                <div className="card-body" key={element.id}>
+                <div className="card-body" >
                   <h5 className="card-title" >{element.id}</h5>
                   <p className="card-text">{element.description}</p>
                 </div>

@@ -119,7 +119,7 @@ export default function AddAssetModal() {
   };
 
   return (
-    <div className='text-center'>
+    <div>
       <button type="button" className="btn btn-lg btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
         + Add an Asset
       </button>

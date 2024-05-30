@@ -53,7 +53,7 @@ export default function Assets(props) {
     <>
       <div className="row mb-4">
         <div className="col">
-          <h3>Motor Assets Overview</h3>
+          <h2>Motor Assets Overview</h2>
           <table className="table table-striped">
             <thead className="thead-light">
               <tr>
