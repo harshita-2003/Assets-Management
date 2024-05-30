@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/AddAsset.css';
-import Env from '../Env';
+import { baseUrl } from '../../Url';
 
 
 export default function AddAssetModal() {
@@ -27,7 +27,7 @@ export default function AddAssetModal() {
 
   async function senddata(formdata) {
     try {
-        let result = await fetch(`${Env.URL}/addasset`, {
+        let result = await fetch(`${baseUrl}/addasset`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

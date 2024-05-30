@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import AddAssetModal from './AddAsset';
-import Env from '../Env';
 import ViewAsset from './ViewAsset';
 import UpdateAsset from './UpdateAsset';
 import '../styles/Assets.css'
+import { baseUrl } from '../../Url';
 
 export default function Assets(props) {
 
@@ -15,7 +15,7 @@ export default function Assets(props) {
     try {
 
       let assetId = e.target.value;
-      let result = await fetch(`${Env.URL}/deleteasset/${assetId}` , {
+      let result = await fetch(`${baseUrl}/deleteasset/${assetId}` , {
         method : 'DELETE',
       });
       let finalResult = await result.json();

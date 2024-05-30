@@ -195,7 +195,3 @@ app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
-
-//AssetManagement
-//VLqxYlboRIMrtd8K
-//harshitagupta2022

@@ -4,10 +4,9 @@ import Dashboard from './components/Dashboard';
 import Assets from './components/Assets';
 import TicketMaintenance from './components/TicketMaintenance';
 import Sidebar from './components/Sidebar';
-import Env from './Env';
-
 import './App.css';
 import AddAsset from './components/AddAsset';
+import { baseUrl } from '../Url';
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -21,7 +20,7 @@ function App() {
   //to render the assets
   async function getData() {
     try {
-      let result = await fetch(`${Env.URL}/assets`);
+      let result = await fetch(`${baseUrl}/assets`);
       let finalResult = await result.json();
       setAssets(finalResult);
       

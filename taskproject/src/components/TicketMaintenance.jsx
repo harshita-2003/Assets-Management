@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/TicketMaintenance.css';
 import AddTicket from './AddTicket';
-import Env from '../Env';
 import UpdateTicket from './UpdateTicket';
+import { baseUrl } from '../../Url';
 
 
 export default function TicketMaintenance(props) {
@@ -13,7 +13,7 @@ export default function TicketMaintenance(props) {
   async function handledelete(e){
     try {
       const ticketid = e.target.value;
-      const result = await fetch(`${Env.URL}/deleteticket/${ticketid}` , {method:'DELETE'})
+      const result = await fetch(`${baseUrl}/deleteticket/${ticketid}` , {method:'DELETE'})
       let finalResult = await result.json();
       console.log(finalResult)
       props.getticket();

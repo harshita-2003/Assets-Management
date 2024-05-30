@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Env from '../Env'
 import '../styles/AddAsset.css'
+import { baseUrl } from '../../Url';
 
 export default function AddTicket({getticket}) {
 
@@ -15,7 +15,7 @@ export default function AddTicket({getticket}) {
     
       async function senddata(formdata) {
         try {
-            let result = await fetch(`${Env.URL}/addticket`, {
+            let result = await fetch(`${baseUrl}/addticket`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

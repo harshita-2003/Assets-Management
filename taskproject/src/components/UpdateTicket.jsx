@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Env from '../Env';
+import { baseUrl } from '../../Url';
 
 export default function UpdateTicket({ticket , onClose , onUpdate}) {
 
@@ -8,7 +8,7 @@ export default function UpdateTicket({ticket , onClose , onUpdate}) {
 
     async function handleUPDATE(updatesticket){
         try {
-            const result = await fetch(`${Env.URL}/updateticket/${ticket._id}` , {
+            const result = await fetch(`${baseUrl}/updateticket/${ticket._id}` , {
                 method : 'PUT' ,
                 headers : {
                     'Content-Type' : 'application/json'

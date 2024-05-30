@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Env from '../Env';
 import '../styles/ViewAsset.css'
+import { baseUrl } from '../../Url';
 
 export default function UpdateAsset({ asset, onClose, onUpdate }) {
     const [updatedAsset, setUpdatedAsset] = useState({ ...asset });
@@ -36,7 +36,7 @@ export default function UpdateAsset({ asset, onClose, onUpdate }) {
         const validationErrors = validateFormData(updatedAsset);
         if (Object.keys(validationErrors).length === 0) {
             try {
-                const response = await fetch(`${Env.URL}/updateasset/${asset._id}`, {
+                const response = await fetch(`${baseUrl}/updateasset/${asset._id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
