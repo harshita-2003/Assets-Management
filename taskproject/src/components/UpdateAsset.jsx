@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/ViewAsset.css'
-import { baseUrl } from '../../Url';
+import { baseUrl } from '../Url';
 
 export default function UpdateAsset({ asset, onClose, onUpdate }) {
     const [updatedAsset, setUpdatedAsset] = useState({ ...asset });

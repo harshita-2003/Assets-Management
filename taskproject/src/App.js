@@ -6,7 +6,7 @@ import TicketMaintenance from './components/TicketMaintenance';
 import Sidebar from './components/Sidebar';
 import './App.css';
 import AddAsset from './components/AddAsset';
-import { baseUrl } from '../Url';
+import { baseUrl } from './Url';
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -36,7 +36,7 @@ function App() {
   const [tickets, setTickets] = useState([]);
 
   async function getticket(){
-    const url = await fetch(`${Env.URL}/getticket`)
+    const url = await fetch(`${baseUrl}/getticket`)
     const result = await url.json()
 
     setTickets(result);

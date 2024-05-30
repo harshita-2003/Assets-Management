@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/AddAsset.css'
-import { baseUrl } from '../../Url';
+import { baseUrl } from '../Url';
 
 export default function AddTicket({getticket}) {
 

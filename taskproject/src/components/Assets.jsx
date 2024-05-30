@@ -3,7 +3,7 @@ import AddAssetModal from './AddAsset';
 import ViewAsset from './ViewAsset';
 import UpdateAsset from './UpdateAsset';
 import '../styles/Assets.css'
-import { baseUrl } from '../../Url';
+import { baseUrl } from '../Url';
 
 export default function Assets(props) {
 

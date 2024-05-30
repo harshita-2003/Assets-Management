@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/TicketMaintenance.css';
 import AddTicket from './AddTicket';
 import UpdateTicket from './UpdateTicket';
-import { baseUrl } from '../../Url';
+import { baseUrl } from '../Url';
 
 
 export default function TicketMaintenance(props) {

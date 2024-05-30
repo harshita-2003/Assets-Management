@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { baseUrl } from '../../Url';
+import { baseUrl } from '../Url';
 
 export default function UpdateTicket({ticket , onClose , onUpdate}) {
 
