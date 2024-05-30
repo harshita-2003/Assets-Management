@@ -3,7 +3,6 @@
 # dependencies
 taskproject/node_modules
 server/node_modules
-taskproject/.env
 server/.env
 /.pnp
 .pnp.js
