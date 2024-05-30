@@ -30,6 +30,7 @@ export default function AddTicket({getticket}) {
     
             let finalresult = await result.json();
             console.log(finalresult);
+            getticket();
     
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
