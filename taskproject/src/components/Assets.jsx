@@ -91,7 +91,7 @@ export default function Assets(props) {
       {selectedAsset && <ViewAsset asset={selectedAsset} onClose={handleCloseModal} />}
       {updateAsset && <UpdateAsset asset={updateAsset} onClose={handleCloseUpdateModal} onUpdate={handleUpdateAsset} />}
 
-      <p className='text-muted message'>Kindly wait as it's deployed on the free server</p>
+      <p className='text-muted message'>Kindly wait & refresh as it's deployed on the free server</p>
     </>
   );
 }

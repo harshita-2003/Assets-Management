@@ -68,7 +68,7 @@ export default function TicketMaintenance(props) {
 
       {updatedticket && <UpdateTicket ticket={updatedticket} onClose={handleCloseUpdateModal} onUpdate={handleUpdateticket}/>}
 
-      <p className='text-muted message'>Kindly wait as it's deployed on the free server</p>
+      <p className='text-muted message'>Kindly wait & refresh as it's deployed on the free server</p>
     </>
   );
 }
