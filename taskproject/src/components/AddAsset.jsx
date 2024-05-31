@@ -3,7 +3,7 @@ import '../styles/AddAsset.css';
 import { baseUrl } from '../Url';
 
 
-export default function AddAssetModal() {
+export default function AddAssetModal({getData}) {
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -42,6 +42,7 @@ export default function AddAssetModal() {
 
         let finalresult = await result.json();
         console.log(finalresult);
+        window.location.reload();
 
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
@@ -58,6 +59,8 @@ export default function AddAssetModal() {
 
       // Close the modal after submission (optional)
       document.querySelector('#exampleModalCenter .close').click();
+
+      getData();
 
       setFormData({
         id: "",
@@ -77,6 +80,7 @@ export default function AddAssetModal() {
           speed: "",
         },
       })
+      getData();
 
     } else {
       setErrors(validationErrors);

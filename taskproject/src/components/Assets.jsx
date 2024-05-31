@@ -86,7 +86,7 @@ export default function Assets(props) {
       </div>
 
 
-      <AddAssetModal />
+      <AddAssetModal getData={props.getData}/>
 
       {selectedAsset && <ViewAsset asset={selectedAsset} onClose={handleCloseModal} />}
       {updateAsset && <UpdateAsset asset={updateAsset} onClose={handleCloseUpdateModal} onUpdate={handleUpdateAsset} />}
