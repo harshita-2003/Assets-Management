@@ -37,6 +37,11 @@ input{
   overflow-y: auto;
 }
 
+.message{
+  position: fixed;
+  bottom: 2px;
+}
+
 @media screen and (max-width:380px) {
   h2{
     font-size: 1.5em;
@@ -47,7 +52,9 @@ input{
   }
   main{
     padding-left: 10px;
-
+  }
+  .message{
+    font-size: 12px;
   }
 }
 
